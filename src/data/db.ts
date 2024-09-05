@@ -1,5 +1,9 @@
 import postgres from 'postgres';
-import 'dotenv/config';
+
+// only use dotenv in local dev
+if (process.env.NODE_ENV !== 'production') {
+  await import('dotenv/config');
+}
 
 // Function to create a PostgreSQL connection using the Railway-provided DATABASE_URL
 async function createSqlConnection() {
