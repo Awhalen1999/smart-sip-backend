@@ -8,6 +8,7 @@ if (process.env.NODE_ENV !== 'production') {
 // Function to create a PostgreSQL connection using the Railway-provided DATABASE_URL
 async function createSqlConnection() {
   try {
+    //@ts-ignore
     return postgres(process.env.DATABASE_URL, {
       ssl: {
         rejectUnauthorized: false, // Disable strict SSL

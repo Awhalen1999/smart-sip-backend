@@ -14,6 +14,7 @@ async function build() {
     scripts: {
       start: 'node index.js',
     },
+    type: 'module',
   };
 
   await fs.writeFile('dist/package.json', JSON.stringify(packageJson, null, 2));
