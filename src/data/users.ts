@@ -27,14 +27,14 @@ export const findUserByEmail = async (email: string) => {
 
 // Data function to insert a new user
 export const insertUser = async (
-  name: string,
+  username: string,
   email: string,
   password: string
 ) => {
   const sql = await getSql();
 
   const result = await sql`
-    INSERT INTO users (name, email, password) VALUES (${name}, ${email}, ${password})
+    INSERT INTO users (username, email, password) VALUES (${username}, ${email}, ${password})
     RETURNING *
   `;
 

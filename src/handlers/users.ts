@@ -26,7 +26,7 @@ export const loginUser = async (c: Context) => {
 // Handler for user signup
 export const signupUser = async (c: Context) => {
   try {
-    const { email, password, name } = await c.req.json();
+    const { email, password, username } = await c.req.json();
 
     // Check if the user already exists with the provided email
     const userExists = await checkUserExists(email);
@@ -36,7 +36,7 @@ export const signupUser = async (c: Context) => {
     }
 
     // Call the API function to create the user and add to the database
-    const newUser = await createUser(name, email, password);
+    const newUser = await createUser(username, email, password);
 
     return c.json({ message: 'Signup successful', user: newUser }, 201);
   } catch (error) {

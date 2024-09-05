@@ -22,10 +22,10 @@ export const checkUserExists = async (email: string) => {
 
 // API function to create a new user
 export const createUser = async (
-  name: string,
+  username: string,
   email: string,
   password: string
 ) => {
   // Call the data function to insert the new user
-  return await insertUser(name, email, password);
+  return await insertUser(username, email, password);
 };
