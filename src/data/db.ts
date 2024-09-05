@@ -9,7 +9,7 @@ if (process.env.NODE_ENV !== 'production') {
 async function createSqlConnection() {
   try {
     //@ts-ignore
-    return postgres(process.env.DATABASE_URL, {
+    return postgres(process.env.DATABASE_CONNECT, {
       ssl: {
         rejectUnauthorized: false, // Disable strict SSL
       },
