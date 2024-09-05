@@ -7,10 +7,7 @@ const app = new Hono();
 
 app.use(
   cors({
-    origin: [
-      'http://localhost:3000',
-      'https://awhalen1999.github.io/smart-sip',
-    ],
+    origin: ['http://localhost:3000', 'https://awhalen1999.github.io'],
   })
 );
 
