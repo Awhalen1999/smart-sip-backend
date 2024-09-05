@@ -7,11 +7,19 @@ const app = new Hono();
 
 app.use(
   cors({
-    origin: 'http://localhost:3000',
+    origin: [
+      'http://localhost:3000',
+      'https://awhalen1999.github.io/smart-sip',
+    ],
   })
 );
 
 app.route('/users', UsersRouter);
+
+app.get('/', (c) => {
+  console.log('Root endpoint hit');
+  return c.text('Welcome to the API');
+});
 
 serve({
   fetch: app.fetch,
