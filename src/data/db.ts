@@ -1,6 +1,6 @@
 import postgres from 'postgres';
 
-// Only use dotenv in local development
+// Only use dotenv in local development-
 if (process.env.NODE_ENV !== 'production') {
   console.log('Development environment detected. Loading .env file...');
   await import('dotenv/config');
