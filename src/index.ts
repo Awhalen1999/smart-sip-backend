@@ -7,7 +7,7 @@ const app = new Hono();
 
 app.use(
   cors({
-    origin: ['http://localhost:3000', 'https://awhalen1999.github.io'],
+    origin: ['https://awhalen1999.github.io', 'http://localhost:5173'],
   })
 );
 
@@ -17,6 +17,10 @@ app.get('/', (c) => {
   console.log('Root endpoint hit');
   return c.text('Welcome to the API');
 });
+
+app.get('/test', (c) => c.text('Backend running locally'));
+
+console.log('Backend running on port 8787');
 
 serve({
   fetch: app.fetch,
