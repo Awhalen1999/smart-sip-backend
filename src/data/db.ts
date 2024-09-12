@@ -1,9 +1,10 @@
 import postgres from 'postgres';
+import dotenv from 'dotenv';
 
 // Only use dotenv in local development-
 if (process.env.NODE_ENV !== 'production') {
   console.log('Development environment detected. Loading .env file...');
-  await import('dotenv/config');
+  dotenv.config();
 }
 
 // Function to create a PostgreSQL connection using the DATABASE_CONNECT variable

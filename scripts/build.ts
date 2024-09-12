@@ -7,14 +7,14 @@ async function build() {
     bundle: true,
     outdir: 'dist',
     platform: 'node',
-    format: 'esm', // Ensure output format is ES module
+    format: 'cjs',
   });
 
   const packageJson = {
     scripts: {
       start: 'node index.js',
     },
-    type: 'module',
+    type: 'commonjs',
   };
 
   await fs.writeFile('dist/package.json', JSON.stringify(packageJson, null, 2));

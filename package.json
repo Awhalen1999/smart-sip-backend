@@ -1,8 +1,6 @@
 {
   "name": "smart-sip-backend",
-  "private": true,
-  "version": "1.0.0",
-  "type": "module",
+  "type": "commonjs",
   "scripts": {
     "dev": "tsx watch src/index.ts",
     "clean": "rm -rf dist",
