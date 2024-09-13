@@ -46,3 +46,12 @@ export const insertUser = async (
 
   return result[0]; // Return the newly created user
 };
+
+// Data function to get a user by ID
+export const findUserById = async (id: string) => {
+  const sql = await getSql();
+  const result = await sql`
+    SELECT * FROM users WHERE id = ${id}
+  `;
+  return result[0]; // Return the first user with that id
+};

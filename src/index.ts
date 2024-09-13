@@ -8,6 +8,7 @@ const app = new Hono();
 app.use(
   cors({
     origin: ['https://awhalen1999.github.io', 'http://localhost:5173'],
+    credentials: true,
   })
 );
 

@@ -2,6 +2,7 @@ import {
   findUserByEmailAndPassword,
   insertUser,
   findUserByEmail,
+  findUserById,
 } from '../data/users';
 
 // API function to get user by email and password
@@ -28,4 +29,9 @@ export const createUser = async (
 ) => {
   // Call the data function to insert the new user
   return await insertUser(username, email, password);
+};
+
+// API function to get user by ID
+export const getUserById = async (id: string) => {
+  return await findUserById(id); // Call the data function to find the user by ID
 };
